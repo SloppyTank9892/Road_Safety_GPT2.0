@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Train model",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/train_model.py",
+      "args": ["--db", "GPT_Input_DB.xlsx", "--out", "models"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Recommend (CLI)",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/recommend.py",
+      "args": ["--model", "models", "--query", "faded stop sign near intersection", "--topk", "5"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Streamlit UI",
+      "type": "python",
+      "request": "launch",
+      "module": "streamlit",
+      "args": ["run", "app_streamlit.py"],
+      "console": "integratedTerminal"
+    }
+  ]
+}
